@@ -12,8 +12,11 @@ memoffset = "*"
 winit = "0.27"
 image = "0.24"
 raw-window-handle = "0.5"
-ash = { version = "0.37.1", features = ["linked"] }
-ash-window = "0.12"
+
+vulkano = "0.32"
+vulkano-win = "0.32"
+vulkano-shaders = "0.32"
+vulkano-util = "0.32"
 
 [dependencies.bevy]
 version = "0.9"
@@ -23,12 +26,12 @@ features = [
     "bevy_asset",
     "bevy_audio",
     "bevy_gilrs",
-    "bevy_gltf",
-    "bevy_scene",
+#    "bevy_gltf",
+#    "bevy_scene",
     "bevy_winit",
-    # No render!
-    "png",
-    "hdr",
+    # "render"
+#    "png",
+#    "hdr",
     "vorbis",
     "x11",
     "filesystem_watcher",
