@@ -6,8 +6,10 @@ use std::io::Cursor;
 use std::mem;
 use std::mem::align_of;
 use arcland_air::*;
+use bytemuck::*;
 
-#[derive(Clone, Debug, Copy)]
+#[derive(Clone, Debug, Copy, Pod, Zeroable, Default)]
+#[repr(C)]
 struct Vertex {
     pos: [f32; 4],
     color: [f32; 4],

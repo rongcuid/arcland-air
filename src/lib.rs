@@ -27,17 +27,6 @@ use winit::{
     window::WindowBuilder,
 };
 
-// Simple offset_of macro akin to C++ offsetof
-#[macro_export]
-macro_rules! offset_of {
-    ($base:path, $field:ident) => {{
-        #[allow(unused_unsafe)]
-        unsafe {
-            let b: $base = mem::zeroed();
-            std::ptr::addr_of!(b.$field) as isize - std::ptr::addr_of!(b) as isize
-        }
-    }};
-}
 /// Helper function for submitting command buffers. Immediately waits for the fence before the command buffer
 /// is executed. That way we can delay the waiting for the fences by 1 frame which is good for performance.
 /// Make sure to create the fence in a signaled state on the first use.
