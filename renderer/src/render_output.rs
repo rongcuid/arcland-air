@@ -1,8 +1,9 @@
-use crate::render_system::{RenderDevice, RenderSystem};
+use crate::render_system::RenderSystem;
 use std::sync::Arc;
 use vulkano::image::{ImageUsage, SwapchainImage};
 use vulkano::swapchain::{Surface, Swapchain, SwapchainCreateInfo};
 use winit::window::Window;
+use crate::render_device::RenderDevice;
 
 pub struct RenderOutput {
     pub swapchain: Arc<Swapchain>,

@@ -31,9 +31,10 @@ use winit::{
     event_loop::{ControlFlow, EventLoop},
     window::{Window, WindowBuilder},
 };
+use renderer::render_device::RenderDevice;
 
 use renderer::render_output::RenderOutput;
-use renderer::render_system::{RenderDevice, RenderSystem};
+use renderer::render_system::RenderSystem;
 
 #[repr(C)]
 #[derive(Clone, Copy, Debug, Default, Zeroable, Pod)]
