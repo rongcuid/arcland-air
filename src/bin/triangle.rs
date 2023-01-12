@@ -6,9 +6,10 @@ use std::io::Cursor;
 use std::mem;
 use std::mem::align_of;
 use arcland_air::*;
-use bytemuck::*;
+use bytemuck::{Pod, Zeroable};
+use memoffset::offset_of;
 
-#[derive(Clone, Debug, Copy, Pod, Zeroable, Default)]
+#[derive(Clone, Debug, Copy, Pod, Zeroable)]
 #[repr(C)]
 struct Vertex {
     pos: [f32; 4],
